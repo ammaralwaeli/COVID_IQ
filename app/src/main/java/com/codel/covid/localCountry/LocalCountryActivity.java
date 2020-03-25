@@ -36,6 +36,7 @@ public class LocalCountryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_local_country);
+        binding.setName(myName);
         setupViewModel(myName);
     }
 

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="name"
+            type="String" />
     </data>
 
     <LinearLayout
@@ -14,6 +16,21 @@
         android:layoutDirection="rtl"
         tools:context=".localCountry.LocalCountryActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_toolbar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{name}"
+                android:textSize="25sp"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                />
+        </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
             android:layout_width="match_parent"
