@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">COVID</string>
+    <string name="total_cases">الحالات المصابة</string>
+    <string name="countries">الدول</string>
+</resources>
