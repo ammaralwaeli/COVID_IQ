@@ -36,7 +36,7 @@ class SplashScreenActivity : AppCompatActivity() {
             .into(binding.logoImageView)
 
 
-        object : CountDownTimer(1500, 1500) {
+        object : CountDownTimer(2200, 2200) {
             override fun onFinish() {
                 transitionToLoginScreen()
             }
