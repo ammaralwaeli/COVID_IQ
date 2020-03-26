@@ -102,7 +102,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                 fc.toggle(false);
                 setProgress(holder.binding.death,getValue(Float.parseFloat(item.getCases()),Float.parseFloat(item.getDeaths())));
                 setProgress(holder.binding.recovered,getValue(Float.parseFloat(item.getCases()),Float.parseFloat(item.getRecovered())));
-                setProgress(holder.binding.critical,getValue(Float.parseFloat(item.getCases()),Float.parseFloat(item.getCritical())));
+                setProgress(holder.binding.critical,getValue(Float.parseFloat(item.getActive()),Float.parseFloat(item.getCritical())));
                 setProgress(holder.binding.active,getValue(Float.parseFloat(item.getCases()),Float.parseFloat(item.getActive())));
                 holder.binding.timeline.setOnClickListener(new View.OnClickListener() {
                     @Override

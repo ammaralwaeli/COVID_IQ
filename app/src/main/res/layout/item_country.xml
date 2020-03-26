@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -384,7 +384,7 @@
             android:layoutDirection="rtl"
             android:orientation="horizontal"
             android:padding="15dp"
-            android:visibility="gone">
+            android:visibility="visible">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
