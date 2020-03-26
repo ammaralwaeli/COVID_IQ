@@ -7,6 +7,7 @@ import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Locale;
 
@@ -20,15 +21,15 @@ public class TotalModel implements Serializable {
 
 
 	public String getCases(){
-		return cases+"";
+		return String.format(Locale.ENGLISH,"%s", new DecimalFormat("#,###").format(cases));
 	}
 
 	public String getDeaths(){
-		return deaths+"";
+		 return String.format(Locale.ENGLISH,"%s", new DecimalFormat("#,###").format(deaths));
 	}
 
 	public String getRecovered(){
-		return recovered+"";
+		 return String.format(Locale.ENGLISH,"%s", new DecimalFormat("#,###").format(recovered));
 	}
 
 	public String getUpdated(){

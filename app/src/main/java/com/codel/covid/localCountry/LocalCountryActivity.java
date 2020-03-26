@@ -61,6 +61,7 @@ public class LocalCountryActivity extends AppCompatActivity {
                             binding.recy.setAdapter(adapter);
                         } else {
                             String s = myResponse.getError();
+                            binding.errorText.setVisibility(View.VISIBLE);
                             if(startWithNumber(s)){
                                 binding.errorText.setText(s);
                             }else{

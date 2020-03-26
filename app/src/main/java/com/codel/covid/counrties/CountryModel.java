@@ -11,7 +11,7 @@ public class CountryModel implements Serializable {
 	private int recovered;
 	private int active;
 	private int critical;
-	private int casesPerOneMillion;
+	private float casesPerOneMillion;
 	private CountryInfoModel countryInfo;
 
 	public String getCountry(){
@@ -46,8 +46,8 @@ public class CountryModel implements Serializable {
 		return critical+"";
 	}
 
-	public int getCasesPerOneMillion(){
-		return casesPerOneMillion;
+	public String getCasesPerOneMillion(){
+		return casesPerOneMillion+"";
 	}
 
 	public CountryInfoModel getCountryInfo() {

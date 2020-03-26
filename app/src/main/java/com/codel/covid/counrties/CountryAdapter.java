@@ -1,5 +1,7 @@
 package com.codel.covid.counrties;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,6 +92,9 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final FoldingCell fc = holder.binding.foldingCell;
+        Animator animator= AnimatorInflater.loadAnimator(context,R.animator.scale);
+        animator.setTarget(fc);
+        animator.start();
         final CountryModel item=filteredList.get(position);
         fc.setOnClickListener(new View.OnClickListener() {
             @Override

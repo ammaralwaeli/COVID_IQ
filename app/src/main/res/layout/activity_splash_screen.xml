@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:transitionName="@string/bg_trans"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:background="@drawable/bg_main"
+        tools:context=".ui.activity.SplashScreenActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:transitionName="@string/logo_trans"
+                android:id="@+id/logoImageView"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                tools:src="@mipmap/ic_launcher"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_logo" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/stayAr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#خليك_بالبيت"
+            android:textSize="60sp"
+            android:fontFamily="@font/bahij_the_sans_arabic_bold"
+            android:textDirection="anyRtl"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            />
+
+        <TextView
+            android:id="@+id/stayEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Stay_Home"
+            android:textSize="60sp"
+            android:fontFamily="@font/bahij_the_sans_arabic_bold"
+            android:textDirection="anyRtl"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            />
+    </LinearLayout>
+</layout>
