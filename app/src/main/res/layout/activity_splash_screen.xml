@@ -27,7 +27,7 @@
                 android:layout_width="220dp"
                 android:layout_height="220dp"
                 android:elevation="5dp"
-                tools:src="@mipmap/ic_launcher"
+                tools:src="@drawable/logo"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_logo" />
         </FrameLayout>
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#خليك_بالبيت"
-            android:textSize="60sp"
+            android:textSize="40sp"
             android:fontFamily="@font/bahij_the_sans_arabic_bold"
             android:textDirection="anyRtl"
             android:layout_gravity="center"
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#Stay_Home"
-            android:textSize="60sp"
+            android:textSize="40sp"
             android:fontFamily="@font/bahij_the_sans_arabic_bold"
             android:textDirection="anyRtl"
             android:layout_gravity="center"

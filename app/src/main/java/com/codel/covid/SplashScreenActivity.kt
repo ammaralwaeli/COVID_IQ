@@ -11,6 +11,7 @@ import androidx.core.util.Pair
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.codel.covid.databinding.ActivitySplashScreenBinding
+import com.codel.covid.helpers.SharedPrefHelper
 import com.codel.covid.main.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
 
+        init()
         val animator = AnimatorInflater.loadAnimator(this, R.animator.scale)
         animator.setTarget(binding.stayAr)
         animator.start()
@@ -59,6 +61,10 @@ class SplashScreenActivity : AppCompatActivity() {
                 // Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
+    }
+
+    private fun init(){
+        SharedPrefHelper.init(this)
     }
 
 

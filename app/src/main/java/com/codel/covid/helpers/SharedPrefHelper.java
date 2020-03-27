@@ -8,9 +8,9 @@ public class SharedPrefHelper {
     private static SharedPrefHelper instance;
 
     private static String PREF_NAME = "mySettingsPref";
-    private static String ACCESS_TOKEN = "ACCESS_TOKEN";
-    private static String IS_REGISTER = "IS_REGISTER";
-    private static String IS_VERIFICATION = "IS_VERIFICATION";
+    private static String TOTAL = "TOTAL";
+    private static String DEATHS = "DEATHS";
+    private static String RECOVERED = "RECOVERED";
 
     public static void init(Context context) {
         instance= new SharedPrefHelper(context);
@@ -29,28 +29,28 @@ public class SharedPrefHelper {
     }
 
 
-    public boolean getIsRegister() {
-        return mSharedPreferences.getBoolean(IS_REGISTER,false);
+    public String getTOTAL() {
+        return mSharedPreferences.getString(TOTAL,"000,000");
     }
 
-    public void setIsRegister(boolean isRegister) {
-        mSharedPreferences.edit().putBoolean(IS_REGISTER, isRegister).apply();
+    public void setTOTAL(String total) {
+        mSharedPreferences.edit().putString(TOTAL, total).apply();
     }
 
-    public boolean getIsVerification() {
-        return mSharedPreferences.getBoolean(IS_VERIFICATION,false);
+    public String getDEATHS() {
+        return mSharedPreferences.getString(DEATHS,"00,000");
     }
 
-    public void setIsVerification(boolean isVerification) {
-        mSharedPreferences.edit().putBoolean(IS_VERIFICATION, isVerification).apply();
+    public void setDEATHS(String deaths) {
+        mSharedPreferences.edit().putString(DEATHS, deaths).apply();
     }
 
-    public String getAccessToken(){
-        return mSharedPreferences.getString(ACCESS_TOKEN, null);
+    public String getRECOVERED() {
+        return mSharedPreferences.getString(RECOVERED,"000,000");
     }
 
-    public void setAccessToken(String accessToken){
-        mSharedPreferences.edit().putString(ACCESS_TOKEN, accessToken).apply();
+    public void setRECOVERED(String recovered) {
+        mSharedPreferences.edit().putString(RECOVERED, recovered).apply();
     }
 
 }
