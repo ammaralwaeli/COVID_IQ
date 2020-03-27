@@ -7,11 +7,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioGroup;
 
 import com.codel.covid.R;
 import com.codel.covid.api.ApiResponse;
@@ -27,13 +29,41 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
     ActivityCountriesBinding binding;
     CountryAdapter adapter;
     boolean canFilter;
+    SortBy sortBy;
 
     public static void newInstance(Context context) {
 
         Intent in = new Intent(context, CountriesActivity.class);
         context.startActivity(in);
     }
+    private void setupRadioGroupLestiner() {
+        binding.toggle.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                binding.progressIndicator.setVisibility(View.VISIBLE);
+                binding.recy.setAdapter(null);
+                if (binding.sDeaths.getId() == checkedId) {
+                    sortBy=SortBy.DEATHS;
+                    binding.sDeaths.setTextColor(Color.BLACK);
+                    binding.sCases.setTextColor(Color.WHITE);
+                    binding.sRecovered.setTextColor(Color.WHITE);
+                } else if (binding.sRecovered.getId() == checkedId) {
+                    sortBy=SortBy.RECOVERED;
+                    binding.sRecovered.setTextColor(Color.BLACK);
+                    binding.sCases.setTextColor(Color.WHITE);
+                    binding.sDeaths.setTextColor(Color.WHITE);
+                }else if(binding.sCases.getId() == checkedId){
+                    binding.sRecovered.setTextColor(Color.WHITE);
+                    binding.sDeaths.setTextColor(Color.WHITE);
+                    binding.sCases.setTextColor(Color.BLACK);
+                    sortBy=SortBy.CASES;
+                }
+                countriesViewModel.setMutableLiveDataNull();
+                setupViewModel(sortBy);
 
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +71,8 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
         binding= DataBindingUtil.setContentView(this,R.layout.activity_countries);
         binding.progressIndicator.setVisibility(View.VISIBLE);
         canFilter =false;
+        sortBy= SortBy.CASES;
+        binding.recy.requestFocus();
         binding.errorText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,9 +80,11 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
                 binding.errorText.setText("");
                 countriesViewModel.setMutableLiveDataNull();
                 binding.progressIndicator.setVisibility(View.VISIBLE);
-                setupViewModel();
+                countriesViewModel.setMutableLiveDataNull();
+                setupViewModel(sortBy);
             }
         });
+        setupRadioGroupLestiner();
         binding.searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -76,13 +110,13 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
                 }
             }
         });
-        setupViewModel();
+        setupViewModel(sortBy);
     }
 
 
-    private void setupViewModel(){
+    private void setupViewModel(SortBy sortBy){
         countriesViewModel = new ViewModelProvider(this).get(CountriesViewModel.class);
-        countriesViewModel.init();
+        countriesViewModel.init(sortBy);
         countriesViewModel.getCountriesRepository().observe(this, new Observer<ApiResponse>() {
                     @Override
                     public void onChanged(ApiResponse myResponse) {

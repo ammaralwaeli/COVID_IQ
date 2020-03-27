@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="name"
             type="String" />
@@ -12,8 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layoutDirection="rtl"
+        android:orientation="vertical"
         tools:context=".localCountry.LocalCountryActivity">
 
         <androidx.appcompat.widget.Toolbar
@@ -24,28 +25,28 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{name}"
-                android:textSize="25sp"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"
-                android:textColor="@android:color/white"
+                android:text="@{name}"
                 android:textAlignment="center"
-                />
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
         </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <TextView
                 android:id="@+id/errorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="start"
-                android:textSize="19sp"
                 android:fontFamily="@font/bahij_the_sans_arabic_extra_bold"
-                android:textColor="@color/colorRed"
+                android:gravity="start"
                 android:textAlignment="textStart"
+                android:textColor="@color/colorRed"
+                android:textSize="19sp"
                 android:visibility="gone"
                 tools:text="Error" />
 
@@ -58,9 +59,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recy"
-                android:layout_margin="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:visibility="visible"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_local_country" />
         </FrameLayout>

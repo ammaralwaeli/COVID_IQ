@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">COVID</string>
+    <string name="app_name">COVID_IQ</string>
     <string name="total_cases">الحالات المصابة</string>
     <string name="countries">الدول</string>
     <string name="bg_trans">background_transition</string>

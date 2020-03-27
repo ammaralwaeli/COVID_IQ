@@ -41,6 +41,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
@@ -116,34 +117,6 @@
                         android:textSize="15sp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
-                        android:text="الشفاء"
-                        android:textColor="@color/colorGreen"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bahij_the_sans_arabic_light"
-                        android:setEnglishPrice="@{item.recovered}"
-                        tools:text="2000"
-                        android:textColor="@color/colorGreen"
-                        android:layout_gravity="center"
-                        android:textSize="15sp" />
-                </LinearLayout>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"

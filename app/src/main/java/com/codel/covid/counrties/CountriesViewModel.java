@@ -13,12 +13,12 @@ public class CountriesViewModel extends ViewModel {
 
     private MutableLiveData<ApiResponse> mutableLiveData;
 
-    public void init() {
+    public void init(SortBy sortBy) {
         if (mutableLiveData != null) {
             return;
         }
         CountriesRepository countriesRepository = CountriesRepository.getInstance();
-        mutableLiveData = countriesRepository.getCountries();
+        mutableLiveData = countriesRepository.getCountries(sortBy.value);
     }
 
     public void setMutableLiveDataNull(){

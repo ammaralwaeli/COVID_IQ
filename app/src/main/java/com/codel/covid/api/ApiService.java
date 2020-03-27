@@ -9,14 +9,15 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
     @GET("all")
     Call<TotalModel> getTotalCountries();
 
     @GET("countries")
-    Call<List<CountryModel>> getCountries();
+    Call<List<CountryModel>> getCountries(@Query("sort")String sort);
 
-    @GET("historical/{country}")
+    @GET("v2/historical/{country}")
     Call<HistoricalModel> getHistorical(@Path("country")String country);
 }

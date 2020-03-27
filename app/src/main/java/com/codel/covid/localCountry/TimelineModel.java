@@ -6,7 +6,6 @@ import java.util.HashMap;
 public class TimelineModel implements Serializable {
 	private HashMap<String,Integer> cases;
 	private HashMap<String,Integer> deaths;
-	private HashMap<String,Integer> recovered;
 
 /*
 	public static Map<String, Object> jsonToMap(JSONObject json) throws JSONException {
@@ -61,10 +60,6 @@ public class TimelineModel implements Serializable {
 
 	public HashMap<String,Integer> getDeaths(){
 		return deaths;
-	}
-
-	public HashMap<String,Integer> getRecovered(){
-		return recovered;
 	}
 
 }

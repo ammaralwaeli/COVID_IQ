@@ -53,7 +53,7 @@ public class LocalCountryActivity extends AppCompatActivity {
                             return;
                         }
                         if (myResponse.getError() == null) {
-                            adapter=new TimelineAdapter((HistoricalModel) myResponse.getPosts());
+                            adapter=new TimelineAdapter(LocalCountryActivity.this,(HistoricalModel) myResponse.getPosts());
                             if(adapter.getItemCount()==0){
                                 binding.errorText.setVisibility(View.VISIBLE);
                                 binding.errorText.setText("لا يوجد جدول زمني لهذه الدولة " + myName);

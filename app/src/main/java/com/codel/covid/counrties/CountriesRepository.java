@@ -31,11 +31,11 @@ public class CountriesRepository {
     }
 
     private MutableLiveData<ApiResponse> data;
-    MutableLiveData<ApiResponse> getCountries(){
+    MutableLiveData<ApiResponse> getCountries(String sortBy){
 
         data = new MutableLiveData<>();
 
-        apiServices.getCountries().enqueue(new Callback<List<CountryModel>>() {
+        apiServices.getCountries(sortBy).enqueue(new Callback<List<CountryModel>>() {
             @Override
             public void onResponse(Call<List<CountryModel>> call, Response<List<CountryModel>> response) {
                 if(response.isSuccessful()){

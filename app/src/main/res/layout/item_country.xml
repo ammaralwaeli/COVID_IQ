@@ -15,7 +15,9 @@
         android:id="@+id/folding_cell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
         android:elevation="5dp"
         android:background="@drawable/bg_item"
         android:clipChildren="false"
@@ -392,21 +394,20 @@
             android:padding="5dp"
             android:layout_marginEnd="5dp"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.country}"
                 android:layout_gravity="center"
-
+                android:text="@{item.country}"
+                android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop"
                 android:srcUrl="@{item.countryInfo.flag}"
                 tools:src="@drawable/cn" />
         </LinearLayout>
@@ -425,6 +426,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/bahij_the_sans_arabic_bold"
                     android:text="عدد الحالات"
+                    android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="15sp" />
 
