@@ -69,27 +69,12 @@
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
-            <RadioButton
-                android:id="@+id/s_deaths"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="1dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/bahij_the_sans_arabic_black"
-                android:background="@drawable/toggle_widget_background"
-                android:button="@null"
-                android:gravity="center"
-                android:text="ترتيب بحسب الوفيات"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
 
             <RadioButton
                 android:id="@+id/s_recovered"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:elevation="2dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="1dp"
@@ -103,6 +88,23 @@
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
+            <RadioButton
+                android:id="@+id/s_deaths"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:elevation="2dp"
+                android:fontFamily="@font/bahij_the_sans_arabic_black"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:text="ترتيب بحسب الوفيات"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
         </RadioGroup>
     </LinearLayout>
         <FrameLayout

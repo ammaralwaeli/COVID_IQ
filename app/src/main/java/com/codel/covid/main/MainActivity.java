@@ -77,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean startWithNumber(String s){
-        return (s.charAt(0)>='0'&& s.charAt(0)<='9');
+    private boolean startWithNumber(String s) {
+        return Character.isDigit(s.charAt(0));
     }
+
     public void goToCountries(View view) {
         CountriesActivity.newInstance(this);
     }

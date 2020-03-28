@@ -25,7 +25,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
 
 
     private HistoricalModel historicalModel;
-
+    private boolean dash;
     private ArrayList<String> sdate;
     private ArrayList<Date> dates;
     private Context context;
@@ -50,6 +50,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
 
         Log.d("sorted",dd);
         Collections.sort(dates);
+
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -89,37 +90,37 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
 
     private String dateToString(Date date){
         DateFormat dateFormat = new SimpleDateFormat("M/d/yy");
-        String strDate = dateFormat.format(date);
-        return strDate;
+        return dateFormat.format(date);
     }
     private String displayDate(Date date){
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String strDate = dateFormat.format(date);
-        return strDate;
+        return dateFormat.format(date);
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-
         String date = dateToString(dates.get(position));
         TimelineModel timelineModel = historicalModel.getTimeline();
         int cases = timelineModel.getCases().get(date);
         int deat = timelineModel.getDeaths().get(date);
+
         if(position>0) {
             date = dateToString(dates.get(position-1));
             cases-=timelineModel.getCases().get(date);
             deat -= timelineModel.getDeaths().get(date);
-        }
 
+        }
         if(cases==deat){
             holder.binding.timeline.setMarker(ContextCompat.getDrawable(context,R.drawable.ic_dot));
             holder.binding.timeline.setLineStyle(TimelineView.LineStyle.NORMAL);
+
+            dash=false;
         }
         else {
             holder.binding.timeline.setMarker(ContextCompat.getDrawable(context,R.drawable.ic_dot_red));
             holder.binding.timeline.setLineStyle(TimelineView.LineStyle.DASHED);
+            dash=true;
         }
 
         Timeline timeline = new Timeline(displayDate(dates.get(position)), cases, deat);

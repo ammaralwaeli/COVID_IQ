@@ -46,7 +46,6 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_gravity="center"
-        android:scaleType="centerCrop"
         android:srcUrl="@{item.countryInfo.flag}"
         tools:src="@drawable/cn" />
 
@@ -222,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bahij_the_sans_arabic_black"
                     android:textColor="@android:color/black"
-                    android:text="عدد الاصابات لهذا اليوم : "
+                    android:text="اصابات جديدة : "
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -242,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/bahij_the_sans_arabic_black"
                     android:textColor="@color/colorRed"
-                    android:text="عدد الوفيات لهذا اليوم : "
+                    android:text="وفيات جديدة : "
                     />
                 <TextView
                     android:layout_width="wrap_content"

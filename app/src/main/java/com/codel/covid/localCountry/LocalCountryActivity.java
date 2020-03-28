@@ -28,10 +28,9 @@ public class LocalCountryActivity extends AppCompatActivity {
         myName=name;
     }
 
-    private boolean startWithNumber(String s){
-        return (s.charAt(0)>='0'&& s.charAt(0)<='9');
+    private boolean startWithNumber(String s) {
+        return Character.isDigit(s.charAt(0));
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
