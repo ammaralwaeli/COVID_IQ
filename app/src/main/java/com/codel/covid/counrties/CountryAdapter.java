@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -30,7 +29,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
 
 
     public interface onClickListener{
-        void onClick(String name);
+        void onTimelineClick(String name);
+        void onChartClick(String name);
     }
 
 
@@ -95,6 +95,9 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
         Animator animator= AnimatorInflater.loadAnimator(context,R.animator.scale);
         animator.setTarget(fc);
         animator.start();
+        animator= AnimatorInflater.loadAnimator(context,R.animator.transition);
+        animator.setTarget(holder.binding.arrow);
+        animator.start();
         final CountryModel item=filteredList.get(position);
         fc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +110,13 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
                 holder.binding.timeline.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        listener.onClick(item.getCountry());
+                        listener.onTimelineClick(item.getCountry());
+                    }
+                });
+                holder.binding.chart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listener.onChartClick(item.getCountry());
                     }
                 });
             }

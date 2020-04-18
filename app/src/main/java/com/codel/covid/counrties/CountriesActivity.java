@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 
 import com.codel.covid.R;
 import com.codel.covid.api.ApiResponse;
+import com.codel.covid.chart.ChartActivity;
 import com.codel.covid.databinding.ActivityCountriesBinding;
 import com.codel.covid.localCountry.LocalCountryActivity;
 
@@ -159,7 +160,12 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
     }
 
     @Override
-    public void onClick(String name) {
+    public void onTimelineClick(String name) {
         LocalCountryActivity.newInstance(this, name);
+    }
+
+    @Override
+    public void onChartClick(String name) {
+        ChartActivity.newInstance(this, name);
     }
 }

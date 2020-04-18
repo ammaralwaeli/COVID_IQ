@@ -24,7 +24,7 @@ public class TimelineViewModel extends ViewModel {
     public void setMutableLiveDataNull(){
         this.mutableLiveData=null;
     }
-    LiveData<MyResponse> getTimelineRepository() {
+    public LiveData<MyResponse> getTimelineRepository() {
         return mutableLiveData;
     }
 }

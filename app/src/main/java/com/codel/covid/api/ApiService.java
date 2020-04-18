@@ -12,12 +12,12 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiService {
-    @GET("all")
+    @GET("v2/all")
     Call<TotalModel> getTotalCountries();
 
-    @GET("countries")
+    @GET("v2/countries")
     Call<List<CountryModel>> getCountries(@Query("sort")String sort);
 
-    @GET("v2/historical/{country}")
+    @GET("v2/historical/{country}?lastdays=all")
     Call<HistoricalModel> getHistorical(@Path("country")String country);
 }
